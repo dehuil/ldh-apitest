@@ -14,7 +14,5 @@ def run_case():
 if __name__ == '__main__':
     current_time = time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime(time.time()))
     report_path = os.path.dirname(os.getcwd()) + "\\report\\" + current_time + '.html'  # 生成测试报告的路径
-    fp = open(report_path, "wb")
-    runner = HTMLTestRunner(stream=fp, title=u"自动化测试报告", description=u'qq接口',verbosity=2)
-    runner.run(run_case())
-    fp.close()
+    with open(report_path,'wb') as f:
+        HTMLTestRunner(stream=f, title=u"自动化测试报告", description=u'kcb接口测试', verbosity=2).run(run_case())
