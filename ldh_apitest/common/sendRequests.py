@@ -24,8 +24,8 @@ class SendRequests():
         if apiData["body"] == "":
             body_data = None
         else:
-            body_data = eval(apiData["body"])
-
+            # body_data = eval(apiData["body"])
+            body_data = apiData["body"]
         ytype = apiData["ytype"]
         v = False
         if ytype == "json":

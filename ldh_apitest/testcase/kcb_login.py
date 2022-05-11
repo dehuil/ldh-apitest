@@ -7,8 +7,11 @@ from ldh_apitest.common.sendRequests import SendRequests
 from ldh_apitest.common.readExcel import ReadExcel
 import os
 import json
+from ldh_apitest.common.sql import make_data
+
 path = os.path.dirname(os.getcwd())+"\\data\\kcb.xlsx"
-testData = ReadExcel.readExcel(path,"Sheet1")
+# testData = ReadExcel.readExcel(path,"Sheet1")
+testData = make_data()
 
 @ddt
 class Test1(unittest.TestCase):
@@ -21,7 +24,6 @@ class Test1(unittest.TestCase):
         result=str(json.loads(re.text)['success'])
         expect_result =eval(data["expect_result"].split(":")[1]).title()
         self.assertEqual(result, expect_result, "返回错误,实际错误码应是\t%s"%re.json()["success"])
-
 
 if __name__ == '__main__':
     unittest.main()
