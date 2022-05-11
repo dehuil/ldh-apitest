@@ -8,8 +8,7 @@ from ldh_apitest.common.HTMLTestRunner_jpg import HTMLTestRunner
 def run_case():
     case_dir = os.path.dirname(os.getcwd()) + "\\" + "testcase"
     test_case = unittest.TestSuite()
-    discover = unittest.defaultTestLoader.discover(case_dir,pattern="kcb_login.py",top_level_dir=None)
-    return discover
+    return unittest.defaultTestLoader.discover(case_dir,pattern="kcb_login.py",top_level_dir=None)
 
 if __name__ == '__main__':
     current_time = time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime(time.time()))

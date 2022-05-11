@@ -22,5 +22,6 @@ class Test1(unittest.TestCase):
         expect_result =eval(data["expect_result"].split(":")[1]).title()
         self.assertEqual(result, expect_result, "返回错误,实际错误码应是\t%s"%re.json()["success"])
 
+
 if __name__ == '__main__':
     unittest.main()
