@@ -7,12 +7,11 @@ from ldh_apitest.common.sendRequests import SendRequests
 from ldh_apitest.common.readExcel import ReadExcel
 import os
 import json
-from ldh_apitest.common.sql import make_data
+from ldh_apitest.common.sql import make_data,make_dict
 
 path = os.path.dirname(os.getcwd())+"\\data\\kcb.xlsx"
 # testData = ReadExcel.readExcel(path,"Sheet1")
-testData = make_data()
-
+testData = make_dict(make_data('select * from excle'))
 @ddt
 class Test1(unittest.TestCase):
     def setUp(self):
