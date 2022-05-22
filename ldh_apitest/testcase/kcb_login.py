@@ -11,7 +11,8 @@ from ldh_apitest.common.sql import make_data,make_dict
 
 path = os.path.dirname(os.getcwd())+"\\data\\kcb.xlsx"
 # testData = ReadExcel.readExcel(path,"Sheet1")
-testData = make_dict(make_data('select * from excle'))
+sql='select * from excle'
+testData = make_dict(make_data(sql))
 @ddt
 class Test1(unittest.TestCase):
     def setUp(self):
